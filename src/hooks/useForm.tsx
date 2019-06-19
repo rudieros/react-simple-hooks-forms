@@ -36,9 +36,10 @@ export const useForm = ({
   }, [])
 
   const submit = useCallback(buildSubmit(formName, validator), [])
+  const reset = useCallback(buildReset(formName), [])
 
   useEffect(cleanForm(formName), [])
-  return { Form: FormComponent, submit }
+  return { Form: FormComponent, submit, reset }
 }
 
 const buildSubmit = (formName: string, validator?: (values: any) => {[fieldName: string]: string | undefined}) => {
@@ -53,6 +54,19 @@ const buildSubmit = (formName: string, validator?: (values: any) => {[fieldName:
       return onError(errors)
     }
     onSuccess(values)
+  }
+}
+
+const buildReset = (formName: string, validator?: (values: any) => {[fieldName: string]: string | undefined}) => () => {
+  const fieldNames = Object.keys(FormFieldRegistry[formName] || {})
+  const initialValues = Form[formName].initialValues
+  fieldNames.forEach((fieldName: string) => {
+    const changeListeners = Object.values((FormFieldSubscriptions[formName][fieldName] || {} as any).changeListenerSubscribers || {})
+    changeListeners.forEach((listener) => listener(initialValues[fieldName]))
+  })
+  if (typeof validator === 'function') {
+    const errors = validator(initialValues)
+    evaluateErrors(errors, formName)
   }
 }
 

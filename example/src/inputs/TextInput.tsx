@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { useFormInput } from '../lib/hooks/useFormInput'
-import { FormInputProps } from 'react-hooks-forms'
+import { FormInputProps, useFormInput } from 'react-hooks-forms'
 
 export const TextInput: React.FunctionComponent<FormInputProps> = React.memo(({
                                                                                 ...formInputProps

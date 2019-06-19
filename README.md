@@ -1,31 +1,57 @@
-# react-hooks-forms
+# React Simple Hooks Forms
 
-> 
+Performatic forms for React/React Native using hooks api.
 
-[![NPM](https://img.shields.io/npm/v/react-hooks-forms.svg)](https://www.npmjs.com/package/react-hooks-forms) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
-## Install
-
-```bash
-npm install --save react-hooks-forms
+## Installation
+```
+yarn add react-hooks-forms
+```
+or 
+```
+npm i react-hooks-forms
 ```
 
-## Usage
+## Basic Usage
+Build your inputs: (works with React and React Native)
 
-```tsx
-import * as React from 'react'
+```jsx
+import React from 'react'
+import { useFormInput } from 'react-hooks-forms'
 
-import MyComponent from 'react-hooks-forms'
-
-class Example extends React.Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
+export const TextFormField = (props) => {
+    const { value, setValue } = useFormInput(props)
+    const onChange = (e) => setValue(e.target.value)
+    
+    return <input
+      name={props.name}
+      value={value}
+      onChange={onChange}
+    />
 }
 ```
+Wrap your fields with the `Form` component:
+```jsx
+import React from 'react'
+import { useForm } from 'react-hooks-forms'
 
-## License
+const validator = (values) => {
+  const errors = {}
+  if (!values.name) {
+    errors.name = 'Name is required'
+  }
+  return errors
+}
 
-MIT © [rudieros](https://github.com/rudieros)
+const initialValues = { name: 'John' }
+
+const App = () => {
+  const { Form, submit } = useForm({ initialValues, validator })
+  return <Form>
+    <TextFormField name={'name'} />
+    <TextFormField name={'email'} />
+    <button onClick={submit}>
+      Submit
+     </button>
+  </Form>
+}
+```

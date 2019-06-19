@@ -2,14 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e0b6457-a9ce-426d-91c1-2704789b5860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/my-app/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/.idea/my-app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/config/modules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/config/pnpTs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/config/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/modules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/pnpTs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/react-app-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/react-app-env.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/react-hooks-forms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/react-hooks-forms.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/example/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/config/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/config/env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/config/jest/fileTransform.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/config/jest/fileTransform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/config/jest/typescriptTransform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/config/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/config/paths.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/config/polyfills.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/config/webpack.config.dev.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/config/webpack.config.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/config/webpackDevServer.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/config/webpackDevServer.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/images.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/.idea/react-hooks-forms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/.idea/react-hooks-forms.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/jest/fileTransform.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/jest/fileTransform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/jest/typescriptTransform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/paths.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/polyfills.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/webpack.config.dev.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/webpack.config.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/webpackDevServer.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/config/webpackDevServer.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/images.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/scripts/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/scripts/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/scripts/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/scripts/start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/scripts/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/scripts/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/App.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/inputs/TextInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/inputs/TextInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/registerServiceWorker.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/tsconfig.prod.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/tsconfig.test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/.idea/my-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/.idea/my-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/src/react-app-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/src/serviceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/my-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/example/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/src/hooks/useForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/src/hooks/useForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-hooks-forms/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/scripts/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/scripts/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/scripts/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/scripts/start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/scripts/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/scripts/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/inputs/TextInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/inputs/TextInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/registerServiceWorker.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tsconfig.prod.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tsconfig.test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.idea/my-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/.idea/my-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/react-app-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/serviceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="168">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="19" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -36,19 +140,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/scripts/start.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="546">
+                <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/App.tsx">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hooks/useForm.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FormFieldRegistry.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/helpers/registerField.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="30" column="68" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -57,28 +200,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="791">
-              <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/tsconfig.json">
+        <entry file="file://$PROJECT_DIR$/example/tsconfig.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
@@ -95,6 +217,9 @@
       <find>src/index</find>
       <find>index</find>
       <find>index.</find>
+      <find>hooks</find>
+      <find>FormComponen</find>
+      <find>react-dom</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,14 +229,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/example/src/inputs/TextInput.tsx" />
-        <option value="$PROJECT_DIR$/src/index.ts" />
         <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/example/config/paths.js" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/example/src/App.tsx" />
         <option value="$PROJECT_DIR$/example/package.json" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/my-app/tsconfig.json" />
+        <option value="$PROJECT_DIR$/src/index.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/hooks/useForm.tsx" />
       </list>
     </option>
   </component>
@@ -138,12 +265,13 @@
             <path>
               <item name="react-hooks-forms" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-hooks-forms" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-hooks-forms" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-hooks-forms" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hooks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -194,15 +322,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560976646871</updated>
-      <workItem from="1560976650558" duration="2315000" />
+      <workItem from="1560976650558" duration="6328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2315000" />
+    <option name="totallyTimeSpent" value="6328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-241" y="-1080" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -244,16 +373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="105">
-            <caret line="5" selection-start-line="5" selection-end-line="5" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -314,33 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/scripts/start.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -358,17 +450,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/tsconfig.json">
+    <entry file="file://$PROJECT_DIR$/example/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="791">
-          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="34" />
+        <state relative-caret-position="288">
+          <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="546">
+            <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helpers/onChangeValue.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FormFieldRegistry.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helpers/registerField.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="30" column="68" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hooks/useForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
         </state>
       </provider>
     </entry>
