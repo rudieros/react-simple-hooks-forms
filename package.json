@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-forms",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "author": "rudieros",
   "license": "MIT",
@@ -21,7 +21,9 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "object-path": "^0.11.4"
+  },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
     "@types/jest": "^23.1.5",
+    "@types/object-path": "^0.11.0",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
     "babel-core": "^6.26.3",
