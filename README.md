@@ -1,14 +1,15 @@
 # React Simple Hooks Forms
 
 Performatic forms for React/React Native using hooks api.
+Yes we're running out of names for React Forms with hooks.
 
 ## Installation
 ```
-yarn add react-hooks-forms
+yarn add react-simple-hooks-forms
 ```
 or 
 ```
-npm i react-hooks-forms
+npm i react-simple-hooks-forms
 ```
 
 ## Basic Usage
