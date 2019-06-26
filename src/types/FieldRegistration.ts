@@ -6,7 +6,7 @@ export interface FieldRegistration {
   errorListener: (error: any) => void
   mask?: (value: any) => any
   unmask?: (value: any) => any
-  validate?: (value: any) => string | undefined
-  validateOptions: ValidationOptions
+  validator?: (value: any) => string | undefined
+  validationOptions: ValidationOptions
   saveUnmaskedValue?: boolean
 }

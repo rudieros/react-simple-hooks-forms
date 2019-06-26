@@ -40,7 +40,7 @@ export const useFormInput = (formInputProps: FormInputProps) => {
       errorListener: setError,
       fieldName,
       ...fieldRegistration,
-      validateOptions: { ...defaults.validationOptions, ...props.validationOptions },
+      validationOptions: { ...defaults.validationOptions, ...props.validationOptions },
     })
   }, [fieldName, formName])
 

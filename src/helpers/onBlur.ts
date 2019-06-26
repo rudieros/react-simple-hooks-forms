@@ -16,7 +16,7 @@ export const onBlur = (config: {
   } = { formName: getDefaults().formName, ...config }
 
   const fieldRegistration = FormFieldRegistry[formName][fieldName]
-  if (fieldRegistration.validateOptions.trigger !== ValidationTrigger.BLUR) {
+  if (fieldRegistration.validationOptions.trigger !== ValidationTrigger.BLUR) {
     return
   }
 
@@ -30,11 +30,11 @@ const validateValue = (
   fieldRegistration: FieldRegistration,
 ) => {
   const {
-    validate,
+    validator,
     fieldName,
   } = fieldRegistration
-  if (typeof validate === 'function') {
-    const error = validate(value)
+  if (typeof validator === 'function') {
+    const error = validator(value)
     onChangeError({ formName, fieldName })(error)
   }
 }

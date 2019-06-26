@@ -183,7 +183,7 @@ export default () => {
 ```
 
 You can choose to validate on the field's onBlur:
-```
+```jsx
 const TextFormField = (props) => {
     const { value, setValue } = useFormInput(props)
     const onChange = (e) => setValue(e.target.value)
@@ -199,7 +199,7 @@ export default () => {
   return <Form>
     <TextFormField 
       name={'password'} 
-      validator={passwordValidator}
+      validate={passwordValidator}
       validationOptions={{
         trigger: ValidationOptions.BLUR,
       }}

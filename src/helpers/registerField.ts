@@ -1,6 +1,6 @@
 import { Form } from '../Form'
 import { FormFieldRegistry } from '../FormFieldRegistry'
-import { ValidationTrigger, ValidationOrder } from '../types/FormInputProps'
+import { ValidationTrigger, ValidationOrder, ValidationOptions } from '../types/FormInputProps'
 import { onChangeError } from './onChangeError'
 import { onChangeValue } from './onChangeValue'
 import { FieldRegistration } from '../types/FieldRegistration'
@@ -12,12 +12,12 @@ export const registerField = (formName: string) => (input: FieldRegistration) =>
   }
   const {
     fieldName,
-    validateOptions,
+    validationOptions,
   } = input
 
   FormFieldRegistry[formName][fieldName] = {
     ...input,
-    validateOptions: { ...defaultValidateOptions, ...validateOptions },
+    validationOptions: { ...defaultValidateOptions, ...validationOptions },
   }
   const onChange = onChangeValue({ fieldName, formName })
   const onError = onChangeError({ fieldName, formName })
@@ -28,7 +28,7 @@ export const registerField = (formName: string) => (input: FieldRegistration) =>
   return { onChange, onError, onBlur }
 }
 
-const defaultValidateOptions = {
-  on: ValidationTrigger.ON_CHANGE,
+const defaultValidateOptions: ValidationOptions = {
+  trigger: ValidationTrigger.ON_CHANGE,
   order: ValidationOrder.AFTER_MASK
 }

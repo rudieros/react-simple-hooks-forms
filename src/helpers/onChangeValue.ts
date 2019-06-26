@@ -56,17 +56,17 @@ const validateValue = (
   fieldRegistration: FieldRegistration,
 ) => {
   const {
-    validateOptions,
-    validate,
+    validationOptions,
+    validator,
     fieldName,
   } = fieldRegistration
   if (
-    validateOptions
-    && validateOptions.order === order
-    && validateOptions.trigger === ValidationTrigger.ON_CHANGE
-    && typeof validate === 'function'
+    validationOptions
+    && validationOptions.order === order
+    && validationOptions.trigger === ValidationTrigger.ON_CHANGE
+    && typeof validator === 'function'
   ) {
-    const error = validate(value)
+    const error = validator(value)
     onChangeError({ formName, fieldName })(error)
   }
 }
