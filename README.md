@@ -17,7 +17,7 @@ Build your inputs: (works with React and React Native)
 
 ```jsx
 import React from 'react'
-import { useFormInput } from 'react-hooks-forms'
+import { useFormInput } from 'react-simple-hooks-forms'
 
 export const TextFormField = (props) => {
     const { value, setValue } = useFormInput(props)
@@ -33,7 +33,7 @@ export const TextFormField = (props) => {
 Wrap your fields with the `Form` component:
 ```jsx
 import React from 'react'
-import { useForm } from 'react-hooks-forms'
+import { useForm } from 'react-simple-hooks-forms'
 
 const validator = (values) => {
   const errors = {}

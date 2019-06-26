@@ -1,8 +1,8 @@
-import { DEFAULT_FORM_NAME } from '../constants/defaultFormName'
 import { Form } from '../Form'
 import { FormFieldRegistry } from '../FormFieldRegistry'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
 import objectPath from 'object-path'
+import { getDefaults } from '../constants/defaults'
 
 export const onChangeError = (config: {
   formName?: string
@@ -11,7 +11,7 @@ export const onChangeError = (config: {
   const {
     formName,
     fieldName,
-  } = { formName: DEFAULT_FORM_NAME, ...config }
+  } = { formName: getDefaults().formName, ...config }
 
   const {
     errorListener,

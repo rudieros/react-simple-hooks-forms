@@ -7,6 +7,6 @@ export interface FieldRegistration {
   mask?: (value: any) => any
   unmask?: (value: any) => any
   validate?: (value: any) => string | undefined
-  validateOptions?: ValidationOptions
+  validateOptions: ValidationOptions
   saveUnmaskedValue?: boolean
 }
