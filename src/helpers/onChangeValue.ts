@@ -3,7 +3,7 @@ import { DEFAULT_FORM_NAME } from '../constants/defaultFormName'
 import { Form } from '../Form'
 import { FormFieldRegistry } from '../FormFieldRegistry'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
-import { ValidateOnOptions, ValidationOptions, ValidateOrderOptions } from '../types/FormInputProps'
+import { ValidationTrigger, ValidationOptions, ValidationOrder } from '../types/FormInputProps'
 import { onChangeError } from './onChangeError'
 import { FieldRegistration } from '../types/FieldRegistration'
 
@@ -23,9 +23,9 @@ export const onChangeValue = (config: {
 
   let finalValue = value
 
-  validateValue(finalValue, ValidateOrderOptions.BEFORE_MASK, formName, fieldRegistration)
+  validateValue(finalValue, ValidationOrder.BEFORE_MASK, formName, fieldRegistration)
   finalValue = applyMask(finalValue, fieldRegistration)
-  validateValue(finalValue, ValidateOrderOptions.AFTER_MASK, formName, fieldRegistration)
+  validateValue(finalValue, ValidationOrder.AFTER_MASK, formName, fieldRegistration)
 
   objectPath.set(Form[formName].values, fieldName, finalValue)
   Form[formName].dirty = true
@@ -51,7 +51,7 @@ const applyMask = (value: any, fieldRegistration: FieldRegistration) => {
 
 const validateValue = (
   value: any,
-  order: ValidateOrderOptions,
+  order: ValidationOrder,
   formName: string,
   fieldRegistration: FieldRegistration,
 ) => {
@@ -63,7 +63,7 @@ const validateValue = (
   if (
     validateOptions
     && validateOptions.order === order
-    && validateOptions.on === ValidateOnOptions.REAL_TIME
+    && validateOptions.trigger === ValidationTrigger.ON_CHANGE
     && typeof validate === 'function'
   ) {
     const error = validate(value)

@@ -46,7 +46,7 @@ export default () => {
       validate={validatePhone}
       saveUnmaskedValue
       validateOptions={{
-        on: ValidateOnOptions.REAL_TIME,
+        on: ValidateOnOptions.ON_CHANGE,
       }}
     />
     <br/>

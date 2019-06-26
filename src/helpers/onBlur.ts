@@ -1,7 +1,7 @@
 import objectPath from 'object-path'
 import { Form } from '../Form'
 import { FormFieldRegistry } from '../FormFieldRegistry'
-import { ValidateOnOptions } from '../types/FormInputProps'
+import { ValidationTrigger } from '../types/FormInputProps'
 import { onChangeError } from './onChangeError'
 import { FieldRegistration } from '../types/FieldRegistration'
 import { getDefaults } from '../constants/defaults'
@@ -16,7 +16,7 @@ export const onBlur = (config: {
   } = { formName: getDefaults().formName, ...config }
 
   const fieldRegistration = FormFieldRegistry[formName][fieldName]
-  if (fieldRegistration.validateOptions.on !== ValidateOnOptions.BLUR) {
+  if (fieldRegistration.validateOptions.trigger !== ValidationTrigger.BLUR) {
     return
   }
 

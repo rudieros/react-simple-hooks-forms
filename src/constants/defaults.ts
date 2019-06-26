@@ -1,11 +1,11 @@
 import { DEFAULT_FORM_NAME } from './defaultFormName'
-import { ValidateOnOptions, ValidateOrderOptions, ValidationOptions } from '../types/FormInputProps'
+import { ValidationTrigger, ValidationOrder, ValidationOptions } from '../types/FormInputProps'
 
 let Defaults = {
   formName: DEFAULT_FORM_NAME,
   validationOptions: {
-    on: ValidateOnOptions.BLUR,
-    order: ValidateOrderOptions.AFTER_MASK,
+    trigger: ValidationTrigger.BLUR,
+    order: ValidationOrder.AFTER_MASK,
   } as ValidationOptions
 }
 
@@ -17,3 +17,5 @@ export const setDefaults = (defaults: typeof Defaults) => {
 }
 
 export const getDefaults = () => Defaults
+
+export const getDefaultFormName = () => Defaults.formName

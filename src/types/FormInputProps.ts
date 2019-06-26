@@ -2,24 +2,24 @@ export interface FormInputProps {
   name: string
   mask?: (value: any) => any
   unmask?: (value: any) => any
-  validate?: (value: any) => any
-  validateOptions?: ValidationOptions
+  validator?: (value: any) => any
+  validationOptions?: ValidationOptions
   formName?: string
   initialValue?: any
   saveUnmaskedValue?: boolean
 }
 
 export interface ValidationOptions {
-  on: ValidateOnOptions,
-  order: ValidateOrderOptions
+  trigger: ValidationTrigger,
+  order: ValidationOrder
 }
 
-export enum ValidateOnOptions {
-  REAL_TIME,
+export enum ValidationTrigger {
+  ON_CHANGE,
   BLUR
 }
 
-export enum ValidateOrderOptions {
+export enum ValidationOrder {
   BEFORE_MASK,
   AFTER_MASK,
 }
