@@ -1,30 +1,37 @@
 import * as React from 'react'
 import { useCallback, useEffect, useMemo } from 'react'
-import { DEFAULT_FORM_NAME } from '../constants/defaultFormName'
 import { Form } from '../Form'
 import { FormContext } from '../FormContext'
 import { FormFieldRegistry } from '../FormFieldRegistry'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
 import { cleanForm } from '../helpers/cleanForm'
 import { registerField } from '../helpers/registerField'
+import { ValidationOptions } from '../types/FormInputProps'
+import { getDefaults } from '../constants/defaults'
 
 export const useForm = ({
   initialValues,
   formName: givenFormName,
   validator,
+  validationOptions,
 }: {
-  initialValues: any,
+  initialValues?: any,
   formName?: string,
-  validator?: (values: { [fieldName: string]: any }) => { [fieldName: string]: string }
-}) => {
-  const formName = givenFormName || DEFAULT_FORM_NAME
+  validator?: (values: { [fieldName: string]: any }) => { [fieldName: string]: string },
+  validationOptions?: ValidationOptions
+} = {}) => {
+  const defaults = getDefaults()
+
+  const formName = givenFormName || defaults.formName
+
   const FormComponent = useMemo(() => {
     Form[formName] = {
       fields: {},
       initialValues: { ...(initialValues || {}) },
       values: { ...(initialValues || {}) },
       errors: {},
-      dirty: false
+      dirty: false,
+      validationOptions: { ...defaults.validationOptions, ...(validationOptions || {}) },
     }
     FormFieldRegistry[formName] = {}
     FormFieldSubscriptions[formName] = {}
@@ -43,11 +50,15 @@ export const useForm = ({
 }
 
 const buildSubmit = (formName: string, validator?: (values: any) => {[fieldName: string]: string | undefined}) => {
-  return (onSuccess: (values: any) => any, onError: (errors: any) => any) => {
+  return async (onSuccess: (values: any) => any, onError: (errors: any) => any) => {
     const values = Form[formName].values
     let errors = Form[formName].errors || {}
     if (typeof validator === 'function') {
-      errors = { ...errors, ...validator(values) }
+      let validatorResult = validator(values)
+      if (validatorResult instanceof Promise) {
+        validatorResult = await validatorResult
+      }
+      errors = { ...errors, ...validatorResult }
     }
     const hasErrors = evaluateErrors(errors, formName)
     if (hasErrors) {

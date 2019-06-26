@@ -4,7 +4,11 @@ import { FormContext } from '../FormContext'
 import { registerField as defaultRegisterField } from '../helpers/registerField'
 import { FormInputProps } from '../types/FormInputProps'
 
-export const useFormInput = (props: FormInputProps) => {
+export const useFormInput = (formInputProps: FormInputProps) => {
+  const props = {
+    saveUnmaskedValue: true,
+    ...formInputProps,
+  }
   const {
     formName: formNameFromContext,
     registerField: registerFieldFromContext,
@@ -18,7 +22,7 @@ export const useFormInput = (props: FormInputProps) => {
   const registerField = registerFieldFromContext || defaultRegisterField(formName)
 
   const fieldName = props.name
-  const initialValue = Form[formName].initialValues[fieldName] || props.initialValue || ''
+  const initialValue = applyMask(Form[formName].initialValues[fieldName] || props.initialValue || '', props)
   const [value, setValue] = useState(initialValue)
   const [error, setError] = useState<undefined | string>(undefined)
   const { onChange, onError } = useMemo(() => {
@@ -27,10 +31,25 @@ export const useFormInput = (props: FormInputProps) => {
       errorListener: setError,
       fieldName,
       mask: props.mask,
+      unmask: props.unmask,
       validate: props.validate,
       validateOptions: props.validateOptions,
+      saveUnmaskedValue: props.saveUnmaskedValue,
     })
   }, [fieldName, formName])
 
-  return { value, error, setValue: onChange, setError: onError }
+  return {
+    value: applyMask(value, props),
+    error,
+    setValue: onChange,
+    setError: onError,
+  }
+}
+
+const applyMask = (value: any, props: FormInputProps) => {
+  const { mask, saveUnmaskedValue } = props
+  if (saveUnmaskedValue && typeof mask === 'function') {
+    return mask(value)
+  }
+  return value
 }

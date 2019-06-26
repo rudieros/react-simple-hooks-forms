@@ -1,13 +1,15 @@
 export interface FormInputProps {
   name: string
   mask?: (value: any) => any
+  unmask?: (value: any) => any
   validate?: (value: any) => any
-  validateOptions?: ValidateOptions,
+  validateOptions?: ValidationOptions
   formName?: string
   initialValue?: any
+  saveUnmaskedValue?: boolean
 }
 
-export interface ValidateOptions {
+export interface ValidationOptions {
   on: ValidateOnOptions,
   order: ValidateOrderOptions
 }

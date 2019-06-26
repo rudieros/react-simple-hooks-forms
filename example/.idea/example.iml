@@ -2,16 +2,14 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../example">
-      <excludeFolder url="file://$MODULE_DIR$/../example/scripts" />
-    </content>
+    <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/node_modules/workbox-build/src/templates" />
+        <option value="$MODULE_DIR$/node_modules/istanbul-reports/lib/html/templates" />
       </list>
     </option>
   </component>

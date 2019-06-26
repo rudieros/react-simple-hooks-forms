@@ -3,8 +3,9 @@ import { DEFAULT_FORM_NAME } from '../constants/defaultFormName'
 import { Form } from '../Form'
 import { FormFieldRegistry } from '../FormFieldRegistry'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
-import { ValidateOnOptions, ValidateOptions, ValidateOrderOptions } from '../types/FormInputProps'
+import { ValidateOnOptions, ValidationOptions, ValidateOrderOptions } from '../types/FormInputProps'
 import { onChangeError } from './onChangeError'
+import { FieldRegistration } from '../types/FieldRegistration'
 
 export const onChangeValue = (config: {
   formName?: string
@@ -15,29 +16,33 @@ export const onChangeValue = (config: {
     fieldName,
   } = { formName: DEFAULT_FORM_NAME, ...config }
 
+  const fieldRegistration = FormFieldRegistry[formName][fieldName]
   const {
-    mask,
     changeListener,
-    validate,
-    validateOptions,
-  } = FormFieldRegistry[formName][fieldName]
+  } = fieldRegistration
 
   let finalValue = value
 
-  validateValue(ValidateOrderOptions.BEFORE_MASK, formName, fieldName, finalValue, validate, validateOptions)
-  finalValue = applyMask(finalValue, mask)
-  validateValue(ValidateOrderOptions.AFTER_MASK, formName, fieldName, finalValue, validate, validateOptions)
+  validateValue(finalValue, ValidateOrderOptions.BEFORE_MASK, formName, fieldRegistration)
+  finalValue = applyMask(finalValue, fieldRegistration)
+  validateValue(finalValue, ValidateOrderOptions.AFTER_MASK, formName, fieldRegistration)
 
   objectPath.set(Form[formName].values, fieldName, finalValue)
   Form[formName].dirty = true
   changeListener(finalValue)
   Object.values((FormFieldSubscriptions[formName][fieldName] || {}).changeListenerSubscribers || {})
-    .forEach((listener) => {
-      listener(finalValue)
-    })
+    .forEach((listener) => listener(finalValue))
 }
 
-const applyMask = (value: any, mask?: (value: any) => any) => {
+const applyMask = (value: any, fieldRegistration: FieldRegistration) => {
+  const { mask, unmask, saveUnmaskedValue, fieldName } = fieldRegistration
+  if (saveUnmaskedValue) {
+    if (typeof unmask === 'function') {
+      return unmask(value)
+    }
+    console.warn(`Form field ${fieldName} was set with saveUnmaskedValue = true but no valid unmask function was supplied. This probably leads to unexpected behaviour.`)
+    return value
+  }
   if (typeof mask === 'function') {
     return mask(value)
   }
@@ -45,13 +50,16 @@ const applyMask = (value: any, mask?: (value: any) => any) => {
 }
 
 const validateValue = (
+  value: any,
   order: ValidateOrderOptions,
   formName: string,
-  fieldName: string,
-  value: any,
-  validate?: (value: any) => any,
-  validateOptions?: ValidateOptions
+  fieldRegistration: FieldRegistration,
 ) => {
+  const {
+    validateOptions,
+    validate,
+    fieldName,
+  } = fieldRegistration
   if (
     validateOptions
     && validateOptions.order === order
