@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e0b6457-a9ce-426d-91c1-2704789b5860" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/onBlur.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/onBlur.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/onChangeValue.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/onChangeValue.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/registerField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/registerField.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useFormInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useFormInput.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/FieldRegistration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/FieldRegistration.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,12 +15,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="345">
-                <caret line="203" column="34" selection-start-line="203" selection-start-column="27" selection-end-line="203" selection-end-column="34" />
+              <first_editor relative-caret-position="311">
+                <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
               </first_editor>
               <second_editor />
             </state>
@@ -42,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/helpers/registerField.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="523">
@@ -101,6 +95,7 @@
       <find>validate</find>
       <find>validator</find>
       <find>options</find>
+      <find>you can pas</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,10 +124,10 @@
         <option value="$PROJECT_DIR$/src/hooks/useForm.tsx" />
         <option value="$PROJECT_DIR$/src/constants/defaults.ts" />
         <option value="$PROJECT_DIR$/src/hooks/useFormFieldValue.ts" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/types/FormInputProps.ts" />
         <option value="$PROJECT_DIR$/src/types/FieldRegistration.ts" />
         <option value="$PROJECT_DIR$/src/helpers/registerField.ts" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -225,12 +220,12 @@
       <updated>1560976646871</updated>
       <workItem from="1560976650558" duration="6328000" />
       <workItem from="1561476248085" duration="9136000" />
-      <workItem from="1561559463020" duration="7386000" />
+      <workItem from="1561559463020" duration="7674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24511000" />
+    <option name="totallyTimeSpent" value="24799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -451,16 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="345">
-            <caret line="203" column="34" selection-start-line="203" selection-start-column="27" selection-end-line="203" selection-end-column="34" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/types/FormInputProps.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -475,6 +460,16 @@
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="311">
+            <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

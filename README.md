@@ -111,7 +111,7 @@ export default () => {
 ```
 
 You may use this hook to set the values of fields as well. In the next example we fill a username field based on the name
-field. You can passe a configuration like `{ setterOnly: true }` if you do not wish to listen to the value and simply have
+field. You can pass a configuration like `{ setterOnly: true }` if you do not wish to listen to the value and simply have
 a setter for it.
 
 ```jsx
