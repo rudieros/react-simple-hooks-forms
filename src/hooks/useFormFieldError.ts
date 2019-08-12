@@ -3,6 +3,7 @@ import { DEFAULT_FORM_NAME } from '../constants/defaultFormName'
 import { Form } from '../Form'
 import { FormContext } from '../FormContext'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
+import { onChangeError } from '../helpers/onChangeError'
 
 export const useFormFieldError = (fieldName: string, {
   formName: optionalFormName,
@@ -44,5 +45,8 @@ export const useFormFieldError = (fieldName: string, {
   }, [])
 
   // TODO unsubscribe
-  return fieldError
+  return {
+    set: onChangeError({ formName, fieldName }),
+    error: fieldError,
+  }
 }
