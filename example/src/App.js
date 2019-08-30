@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { useForm, ValidateOnOptions } from 'react-simple-hooks-forms'
+import React from 'react'
+import { useForm, ValidationTrigger } from 'react-simple-hooks-forms'
 import { TextFormField } from './TextFormField'
 import { parsePhone, unparsePhone, validatePhone } from './parsers/parsePhone'
 
@@ -35,7 +35,7 @@ export default () => {
       validate={validatePhone}
       saveUnmaskedValue
       validateOptions={{
-        on: ValidateOnOptions.BLUR,
+        on: ValidationTrigger.BLUR,
       }}
     />
     <br/>
@@ -46,7 +46,7 @@ export default () => {
       validate={validatePhone}
       saveUnmaskedValue
       validateOptions={{
-        on: ValidateOnOptions.ON_CHANGE,
+        on: ValidationTrigger.ON_CHANGE,
       }}
     />
     <br/>
