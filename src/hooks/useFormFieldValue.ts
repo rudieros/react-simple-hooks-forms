@@ -33,13 +33,13 @@ export const useFormFieldValue = (fieldName: string, {
     }
     const id = getRandomId()
     FormFieldSubscriptions[formName][fieldName] = {
+      ...(FormFieldSubscriptions[formName][fieldName] || {}),
       changeListenerSubscribers: {
         ...((FormFieldSubscriptions[formName][fieldName] || {}).changeListenerSubscribers || {}),
         [id]: (value) => {
           setFieldValue(value)
         }
       },
-      ...(FormFieldSubscriptions[formName][fieldName] || {})
     }
     return id
   }, [])

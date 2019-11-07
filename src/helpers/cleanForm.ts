@@ -7,6 +7,4 @@ export const cleanForm = (formName: string) => () => () => {
   delete Form[formName]
   delete FormFieldSubscriptions[formName]
   delete FormFieldRegistry[formName]
-  // tslint:disable-next-line:no-console
-  console.log('TODO')
 }
