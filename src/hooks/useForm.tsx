@@ -21,20 +21,10 @@ export const useForm = ({
   validationOptions?: ValidationOptions
 } = {}) => {
   const defaults = getDefaults()
-
   const formName = givenFormName || defaults.formName
 
   const FormComponent = useMemo(() => {
-    Form[formName] = {
-      fields: {},
-      initialValues: { ...(initialValues || {}) },
-      values: { ...(initialValues || {}) },
-      errors: {},
-      dirty: false,
-      validationOptions: { ...defaults.validationOptions, ...(validationOptions || {}) },
-    }
-    FormFieldRegistry[formName] = {}
-    FormFieldSubscriptions[formName] = {}
+    initializeForm({ formName, initialValues, validator, validationOptions })
     return (props: any) =>
       <FormContext.Provider
         value={{ registerField: registerField(formName), formName }}
@@ -42,11 +32,38 @@ export const useForm = ({
       /> as any
   }, [])
 
-  const submit = useCallback(buildSubmit(formName, validator), [])
-  const reset = useCallback(buildReset(formName), [])
+  const submit = useCallback(buildSubmit(formName, validator), [formName, validator])
+  const reset = useCallback(buildReset(formName), [formName])
 
-  useEffect(cleanForm(formName), [])
+  useEffect(() => {
+    initializeForm({ formName, initialValues, validator, validationOptions })
+    return cleanForm(formName)()
+  }, [])
   return { Form: FormComponent, submit, reset }
+}
+
+const initializeForm = ({
+                          initialValues,
+                          formName,
+                          validator,
+                          validationOptions,
+                        }: {
+  initialValues?: any,
+  formName: string,
+  validator?: (values: { [fieldName: string]: any }) => { [fieldName: string]: string },
+  validationOptions?: ValidationOptions
+}) => {
+  const defaults = getDefaults()
+  Form[formName] = {
+    fields: {},
+    initialValues: { ...(initialValues || {}) },
+    values: { ...(initialValues || {}) },
+    errors: {},
+    dirty: false,
+    validationOptions: { ...defaults.validationOptions, ...(validationOptions || {}) },
+  }
+  FormFieldRegistry[formName] = {}
+  FormFieldSubscriptions[formName] = {}
 }
 
 const buildSubmit = (formName: string, validator?: (values: any) => {[fieldName: string]: string | undefined}) => {

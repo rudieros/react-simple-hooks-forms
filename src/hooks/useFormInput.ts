@@ -30,7 +30,7 @@ export const useFormInput = (formInputProps: FormInputProps) => {
   const registerField = registerFieldFromContext || defaultRegisterField(formName)
 
   const fieldName = name
-  const initialValue = applyMask(givenInitialValue || Form[formName].initialValues[fieldName] || '', props)
+  const initialValue = applyMask(Form[formName].values[fieldName] || givenInitialValue || Form[formName].initialValues[fieldName] || '', props)
   const [value, setValue] = useState(initialValue)
   const [error, setError] = useState<undefined | string>(undefined)
   const { onChange, onError, onBlur } = useMemo(() => {
