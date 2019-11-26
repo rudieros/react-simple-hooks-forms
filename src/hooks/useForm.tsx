@@ -24,7 +24,7 @@ export const useForm = ({
   const formName = givenFormName || defaults.formName
 
   const FormComponent = useMemo(() => {
-    initializeForm({ formName, initialValues, validator, validationOptions })
+    initializeForm({ formName, initialValues, validationOptions })
     return (props: any) =>
       <FormContext.Provider
         value={{ registerField: registerField(formName), formName }}
@@ -35,17 +35,13 @@ export const useForm = ({
   const submit = useCallback(buildSubmit(formName, validator), [formName, validator])
   const reset = useCallback(buildReset(formName), [formName])
 
-  useEffect(() => {
-    initializeForm({ formName, initialValues, validator, validationOptions })
-    return cleanForm(formName)()
-  }, [])
+  useEffect(cleanForm(formName), [])
   return { Form: FormComponent, submit, reset }
 }
 
 const initializeForm = ({
                           initialValues,
                           formName,
-                          validator,
                           validationOptions,
                         }: {
   initialValues?: any,
