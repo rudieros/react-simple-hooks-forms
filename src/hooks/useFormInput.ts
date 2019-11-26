@@ -4,6 +4,7 @@ import { FormContext } from '../FormContext'
 import { registerField as defaultRegisterField } from '../helpers/registerField'
 import { FormInputProps } from '../types/FormInputProps'
 import { getDefaults } from '../constants/defaults'
+import objectPath from 'object-path'
 
 export const useFormInput = (formInputProps: FormInputProps) => {
   const props = {
@@ -30,7 +31,7 @@ export const useFormInput = (formInputProps: FormInputProps) => {
   const registerField = registerFieldFromContext || defaultRegisterField(formName)
 
   const fieldName = name
-  const initialValue = applyMask(Form[formName].values[fieldName] || givenInitialValue || Form[formName].initialValues[fieldName] || '', props)
+  const initialValue = applyMask(objectPath.get(Form[formName].values, fieldName) || givenInitialValue || objectPath.get(Form[formName].initialValues, fieldName) || '', props)
   const [value, setValue] = useState(initialValue)
   const [error, setError] = useState<undefined | string>(undefined)
   const { onChange, onError, onBlur } = useMemo(() => {
