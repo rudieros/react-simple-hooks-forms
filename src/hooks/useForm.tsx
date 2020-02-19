@@ -14,14 +14,17 @@ export const useForm = ({
   formName: givenFormName,
   validator,
   validationOptions,
+  cleanOnUnmount: givenCleanOnUnmount,
 }: {
   initialValues?: any,
   formName?: string,
   validator?: (values: { [fieldName: string]: any }) => { [fieldName: string]: string },
-  validationOptions?: ValidationOptions
+  validationOptions?: ValidationOptions,
+  cleanOnUnmount?: boolean
 } = {}) => {
   const defaults = getDefaults()
   const formName = givenFormName || defaults.formName
+  const cleanOnUnmount = givenCleanOnUnmount !== undefined ? givenCleanOnUnmount : defaults.cleanOnUnmount
 
   const FormComponent = useMemo(() => {
     initializeForm({ formName, initialValues, validationOptions })
@@ -35,7 +38,7 @@ export const useForm = ({
   const submit = useCallback(buildSubmit(formName, validator), [formName, validator])
   const reset = useCallback(buildReset(formName), [formName])
 
-  useEffect(cleanForm(formName), [])
+  useEffect(cleanForm(formName, cleanOnUnmount), [])
   return { Form: FormComponent, submit, reset }
 }
 

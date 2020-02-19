@@ -2,9 +2,8 @@ import { Form } from '../Form'
 import { FormFieldRegistry } from '../FormFieldRegistry'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
 
-export const cleanForm = (formName: string) => () => () => {
-  // todo clean form fields subscriptions
-  if (process.env.NODE_ENV === 'development') {
+export const cleanForm = (formName: string, cleanOnUnmount: boolean) => () => () => {
+  if (!cleanOnUnmount) {
     return
   }
   delete Form[formName]

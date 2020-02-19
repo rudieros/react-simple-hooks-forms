@@ -6,7 +6,8 @@ let Defaults = {
   validationOptions: {
     trigger: ValidationTrigger.BLUR,
     order: ValidationOrder.AFTER_MASK,
-  } as ValidationOptions
+  } as ValidationOptions,
+  cleanOnUnmount: true,
 }
 
 export const setDefaults = (defaults: typeof Defaults) => {
