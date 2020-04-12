@@ -49,13 +49,16 @@ const validator = (values) => {
 const initialValues = { name: 'John' }
 
 const App = () => {
-  const { Form, submit } = useForm({ initialValues, validator })
+  const { Form, submit, reset } = useForm({ initialValues, validator })
   return <Form>
     <TextFormField name={'name'} />
     <TextFormField name={'email'} />
     <button onClick={submit}>
       Submit
-     </button>
+    </button>
+    <button onClick={reset}>
+      Reset
+    </button> 
   </Form>
 }
 ```
