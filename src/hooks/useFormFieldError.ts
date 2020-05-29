@@ -33,13 +33,13 @@ export const useFormFieldError = (fieldName: string, {
     }
     const id = Date.now().toString()
     FormFieldSubscriptions[formName][fieldName] = {
+      ...(FormFieldSubscriptions[formName][fieldName] || {}),
       errorListenerSubscribers: {
         ...((FormFieldSubscriptions[formName][fieldName] || {} as any).errorListenerSubscribers || {}),
         [id]: (value) => {
           setFieldError(value)
         }
       },
-      ...(FormFieldSubscriptions[formName][fieldName] || {})
     }
     return id
   }, [])

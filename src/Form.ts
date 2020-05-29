@@ -1,5 +1,5 @@
-import { FormType } from './types/FormType'
+import { FormInstanceType } from './types/FormInstanceType'
 
 export const Form: {
-  [formName: string]: FormType
+  [formName: string]: FormInstanceType
 } = {}

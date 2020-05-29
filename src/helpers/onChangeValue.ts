@@ -3,7 +3,7 @@ import { DEFAULT_FORM_NAME } from '../constants/defaultFormName'
 import { Form } from '../Form'
 import { FormFieldRegistry } from '../FormFieldRegistry'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
-import { ValidationTrigger, ValidationOptions, ValidationOrder } from '../types/FormInputProps'
+import { ValidationOrder, ValidationTrigger } from '../types/FormInputProps'
 import { onChangeError } from './onChangeError'
 import { FieldRegistration } from '../types/FieldRegistration'
 

@@ -8,20 +8,19 @@ import { cleanForm } from '../helpers/cleanForm'
 import { registerField } from '../helpers/registerField'
 import { ValidationOptions } from '../types/FormInputProps'
 import { getDefaults } from '../constants/defaults'
+import { UseFormConfig } from '../types/UseFormConfig'
+import { FormHolder } from '../types/FormHolder'
+import { ValidatorType } from '../types/ValidatorType'
+import { SubmitType } from '../types/SubmitType'
 
-export const useForm = ({
-  initialValues,
-  formName: givenFormName,
-  validator,
-  validationOptions,
-  cleanOnUnmount: givenCleanOnUnmount,
-}: {
-  initialValues?: any,
-  formName?: string,
-  validator?: (values: { [fieldName: string]: any }) => { [fieldName: string]: string },
-  validationOptions?: ValidationOptions,
-  cleanOnUnmount?: boolean
-} = {}) => {
+export const useForm: <FormType extends Object = any>(config: UseFormConfig) => FormHolder<FormType> = (config: UseFormConfig = {}) => {
+  const {
+    initialValues,
+    formName: givenFormName,
+    validator,
+    validationOptions,
+    cleanOnUnmount: givenCleanOnUnmount,
+  } = config
   const defaults = getDefaults()
   const formName = givenFormName || defaults.formName
   const cleanOnUnmount = givenCleanOnUnmount !== undefined ? givenCleanOnUnmount : defaults.cleanOnUnmount
@@ -65,26 +64,25 @@ const initializeForm = ({
   FormFieldSubscriptions[formName] = {}
 }
 
-const buildSubmit = (formName: string, validator?: (values: any) => {[fieldName: string]: string | undefined}) => {
-  return async (onSuccess: (values: any) => any, onError: (errors: any) => any) => {
-    const values = Form[formName].values
-    let errors = Form[formName].errors || {}
-    if (typeof validator === 'function') {
-      let validatorResult = validator(values)
-      if (validatorResult instanceof Promise) {
-        validatorResult = await validatorResult
+const buildSubmit: <FormType extends Object = any>(formName: string, validator?: ValidatorType) => SubmitType<FormType> =
+  (formName, validator) => {
+    return async (onSuccess?: (values: any) => any, onError?: (errors: any) => any) => {
+      const values = Form[formName].values
+      let errors = Form[formName].errors || {}
+      if (typeof validator === 'function') {
+        let validatorResult = await validator(values)
+        errors = { ...errors, ...validatorResult }
       }
-      errors = { ...errors, ...validatorResult }
+      const hasErrors = evaluateErrors(errors, formName)
+      if (hasErrors) {
+        return onError?.(errors)
+      }
+      onSuccess?.(values)
+      return values
     }
-    const hasErrors = evaluateErrors(errors, formName)
-    if (hasErrors) {
-      return onError(errors)
-    }
-    onSuccess(values)
   }
-}
 
-const buildReset = (formName: string, validator?: (values: any) => {[fieldName: string]: string | undefined}) => () => {
+const buildReset = (formName: string, validator?: (values: any) => { [fieldName: string]: string | undefined }) => () => {
   const fieldNames = Object.keys(FormFieldRegistry[formName] || {})
   const initialValues = Form[formName].initialValues
   fieldNames.forEach((fieldName: string) => {
