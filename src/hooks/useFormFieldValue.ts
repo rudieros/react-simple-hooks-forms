@@ -4,7 +4,7 @@ import { FormContext } from '../FormContext'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
 import objectPath from 'object-path'
 import { getRandomId } from '../helpers/getRandomId'
-import { onChangeValue } from '../helpers/onChangeValue'
+import { buildOnChangeValue } from '../helpers/buildOnChangeValue'
 import { getDefaultFormName } from '../constants/defaults'
 
 export const useFormFieldValue = (fieldName: string, {
@@ -46,7 +46,7 @@ export const useFormFieldValue = (fieldName: string, {
 
   // TODO unsubscribe trigger unmount
   return {
-    set: onChangeValue({ formName, fieldName }),
+    set: buildOnChangeValue({ formName, fieldName }),
     value: fieldValue,
   }
 }

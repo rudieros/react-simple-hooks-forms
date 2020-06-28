@@ -8,6 +8,9 @@ import { cleanForm } from '../helpers/cleanForm'
 import { registerField } from '../helpers/registerField'
 import { ValidationOptions } from '../types/FormInputProps'
 import { getDefaults } from '../constants/defaults'
+import { eventBubblingEnabled } from '../eventBubbling'
+import { getFormFieldRegistration } from '../helpers/formFieldRegistrationHelpers'
+import objectPath from 'object-path'
 
 export const useForm = ({
   initialValues,
@@ -15,19 +18,21 @@ export const useForm = ({
   validator,
   validationOptions,
   cleanOnUnmount: givenCleanOnUnmount,
+  enableEventBubbling,
 }: {
   initialValues?: any,
   formName?: string,
   validator?: (values: { [fieldName: string]: any }) => { [fieldName: string]: string },
   validationOptions?: ValidationOptions,
-  cleanOnUnmount?: boolean
+  cleanOnUnmount?: boolean,
+  enableEventBubbling?: boolean
 } = {}) => {
   const defaults = getDefaults()
   const formName = givenFormName || defaults.formName
   const cleanOnUnmount = givenCleanOnUnmount !== undefined ? givenCleanOnUnmount : defaults.cleanOnUnmount
 
   const FormComponent = useMemo(() => {
-    initializeForm({ formName, initialValues, validationOptions })
+    initializeForm({ formName, initialValues, validationOptions, enableEventBubbling })
     return (props: any) =>
       <FormContext.Provider
         value={{ registerField: registerField(formName), formName }}
@@ -46,11 +51,13 @@ const initializeForm = ({
                           initialValues,
                           formName,
                           validationOptions,
+                          enableEventBubbling,
                         }: {
   initialValues?: any,
   formName: string,
   validator?: (values: { [fieldName: string]: any }) => { [fieldName: string]: string },
-  validationOptions?: ValidationOptions
+  validationOptions?: ValidationOptions,
+  enableEventBubbling?: boolean
 }) => {
   const defaults = getDefaults()
   Form[formName] = {
@@ -60,6 +67,7 @@ const initializeForm = ({
     errors: {},
     dirty: false,
     validationOptions: { ...defaults.validationOptions, ...(validationOptions || {}) },
+    enableEventBubbling: enableEventBubbling ?? eventBubblingEnabled,
   }
   FormFieldRegistry[formName] = {}
   FormFieldSubscriptions[formName] = {}
@@ -70,10 +78,7 @@ const buildSubmit = (formName: string, validator?: (values: any) => {[fieldName:
     const values = Form[formName].values
     let errors = Form[formName].errors || {}
     if (typeof validator === 'function') {
-      let validatorResult = validator(values)
-      if (validatorResult instanceof Promise) {
-        validatorResult = await validatorResult
-      }
+      let validatorResult = await validator(values)
       errors = { ...errors, ...validatorResult }
     }
     const hasErrors = evaluateErrors(errors, formName)
@@ -103,15 +108,25 @@ const buildReset = (formName: string, validator?: (values: any) => {[fieldName: 
 
 const evaluateErrors = (errors: { [fieldName: string]: string | undefined }, formName: string) => {
   let hasErrors = false
-  const fieldNames = Object.keys(FormFieldRegistry[formName] || {})
-  fieldNames.forEach((fieldName) => {
-    const error = errors[fieldName]
-    if (error) {
-      hasErrors = true
-    }
-    const errorListeners = Object.values((FormFieldSubscriptions[formName][fieldName] || {}).errorListenerSubscribers || {})
-    errorListeners.forEach((listener) => listener(error))
-    FormFieldRegistry[formName][fieldName].errorListener(error)
+  notifyErrors(errors, formName, () => {
+    hasErrors = true
   })
   return hasErrors
+}
+
+const notifyErrors = (errors: { [fieldName: string]: string | undefined }, formName: string, setHasErrors: () => void) => {
+  Object.keys(errors).forEach((errKey) => {
+    const error = errors[errKey]
+    if (!!error) {
+      setHasErrors()
+    }
+    getFormFieldRegistration(formName, errKey)?.errorListener(error)
+    const errorListeners =  Object.values(objectPath.get(FormFieldSubscriptions, `${formName}.${errKey}`)?.errorListenerSubscribers || {})
+    errorListeners.forEach((listener) => {
+      (listener as any)?.(error)
+    })
+    if (typeof errors[errKey] === 'object') {
+      notifyErrors(errors[errKey] as any, `${formName}.${errKey}`, setHasErrors)
+    }
+  })
 }

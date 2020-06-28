@@ -1,10 +1,10 @@
 import objectPath from 'object-path'
 import { Form } from '../Form'
-import { FormFieldRegistry } from '../FormFieldRegistry'
 import { ValidationTrigger } from '../types/FormInputProps'
-import { onChangeError } from './onChangeError'
+import { buildOnChangeError } from './buildOnChangeError'
 import { FieldRegistration } from '../types/FieldRegistration'
 import { getDefaults } from '../constants/defaults'
+import { getFormFieldRegistration } from './formFieldRegistrationHelpers'
 
 export const onBlur = (config: {
   formName?: string
@@ -15,7 +15,7 @@ export const onBlur = (config: {
     fieldName,
   } = { formName: getDefaults().formName, ...config }
 
-  const fieldRegistration = FormFieldRegistry[formName][fieldName]
+  const fieldRegistration = getFormFieldRegistration(formName, fieldName)
   if (fieldRegistration.validationOptions.trigger !== ValidationTrigger.BLUR) {
     return
   }
@@ -35,6 +35,6 @@ const validateValue = (
   } = fieldRegistration
   if (typeof validator === 'function') {
     const error = validator(value)
-    onChangeError({ formName, fieldName })(error)
+    buildOnChangeError({ formName, fieldName })(error)
   }
 }

@@ -3,7 +3,7 @@ import { DEFAULT_FORM_NAME } from '../constants/defaultFormName'
 import { Form } from '../Form'
 import { FormContext } from '../FormContext'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
-import { onChangeError } from '../helpers/onChangeError'
+import { buildOnChangeError } from '../helpers/buildOnChangeError'
 
 export const useFormFieldError = (fieldName: string, {
   formName: optionalFormName,
@@ -33,20 +33,20 @@ export const useFormFieldError = (fieldName: string, {
     }
     const id = Date.now().toString()
     FormFieldSubscriptions[formName][fieldName] = {
+      ...(FormFieldSubscriptions[formName][fieldName] || {}),
       errorListenerSubscribers: {
         ...((FormFieldSubscriptions[formName][fieldName] || {} as any).errorListenerSubscribers || {}),
         [id]: (value) => {
           setFieldError(value)
         }
       },
-      ...(FormFieldSubscriptions[formName][fieldName] || {})
     }
     return id
   }, [])
 
   // TODO unsubscribe
   return {
-    set: onChangeError({ formName, fieldName }),
+    set: buildOnChangeError({ formName, fieldName }),
     error: fieldError,
   }
 }

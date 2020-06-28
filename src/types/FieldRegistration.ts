@@ -9,4 +9,5 @@ export interface FieldRegistration {
   validator?: (value: any) => string | undefined
   validationOptions: ValidationOptions
   saveUnmaskedValue?: boolean
+  enableEventBubbling?: boolean
 }

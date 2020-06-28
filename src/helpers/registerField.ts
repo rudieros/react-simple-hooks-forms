@@ -1,10 +1,11 @@
 import { Form } from '../Form'
 import { FormFieldRegistry } from '../FormFieldRegistry'
 import { ValidationTrigger, ValidationOrder, ValidationOptions } from '../types/FormInputProps'
-import { onChangeError } from './onChangeError'
-import { onChangeValue } from './onChangeValue'
+import { buildOnChangeError } from './buildOnChangeError'
+import { buildOnChangeValue } from './buildOnChangeValue'
 import { FieldRegistration } from '../types/FieldRegistration'
 import { onBlur as buildOnBlur } from './onBlur'
+import { setFormFieldRegistration } from './formFieldRegistrationHelpers'
 
 export const registerField = (formName: string) => (input: FieldRegistration) => {
   if (!Form[formName]) {
@@ -15,12 +16,13 @@ export const registerField = (formName: string) => (input: FieldRegistration) =>
     validationOptions,
   } = input
 
-  FormFieldRegistry[formName][fieldName] = {
+  setFormFieldRegistration(formName, fieldName, {
     ...input,
     validationOptions: { ...defaultValidateOptions, ...validationOptions },
-  }
-  const onChange = onChangeValue({ fieldName, formName })
-  const onError = onChangeError({ fieldName, formName })
+  })
+
+  const onChange = buildOnChangeValue({ fieldName, formName })
+  const onError = buildOnChangeError({ fieldName, formName })
   const onBlur = buildOnBlur({ fieldName, formName })
 
   // TODO unregister

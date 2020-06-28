@@ -7,4 +7,5 @@ export interface FormType {
   initialValues: { [field: string]: any }
   dirty?: boolean
   validationOptions: ValidationOptions
+  enableEventBubbling?: boolean
 }

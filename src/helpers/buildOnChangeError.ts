@@ -1,10 +1,10 @@
 import { Form } from '../Form'
-import { FormFieldRegistry } from '../FormFieldRegistry'
 import { FormFieldSubscriptions } from '../FormFieldSubscriptions'
 import objectPath from 'object-path'
 import { getDefaults } from '../constants/defaults'
+import { getFormFieldRegistration } from './formFieldRegistrationHelpers'
 
-export const onChangeError = (config: {
+export const buildOnChangeError = (config: {
   formName?: string
   fieldName: string
 }) => (error?: string) => {
@@ -15,7 +15,7 @@ export const onChangeError = (config: {
 
   const {
     errorListener,
-  } = FormFieldRegistry[formName][fieldName]
+  } = getFormFieldRegistration(formName, fieldName)
 
   objectPath.set(Form[formName].errors, fieldName, error)
   errorListener(error)

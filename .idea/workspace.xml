@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="823ec989-0510-41a5-89e8-20a7be4c9629" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/eventBubbling.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/formFieldRegistrationHelpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/onBlur.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/onBlur.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/onChangeError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/buildOnChangeError.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/onChangeValue.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/buildOnChangeValue.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/registerField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/registerField.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useFormFieldError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useFormFieldError.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useFormFieldValue.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useFormFieldValue.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/FieldRegistration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/FieldRegistration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/FormType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/FormType.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/react-simple-hooks-forms.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
+        <option value="$PROJECT_DIR$/.idea/dbnavigator.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectId" id="1dvb1NldTByH8iC9zkgIjtWQi7J" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/types" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/helpers/setFormFieldRegistration.ts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/types" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="823ec989-0510-41a5-89e8-20a7be4c9629" name="Default Changelist" comment="" />
+      <created>1590699280482</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590699280482</updated>
+      <workItem from="1590699284166" duration="6349000" />
+      <workItem from="1593308300658" duration="635000" />
+      <workItem from="1593309287175" duration="14587000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="419" y="189" width="602" height="522" key="find.popup" timestamp="1593314413226">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="419" y="189" width="602" height="522" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1593314413226" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1593311873002">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1593311873002" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
