@@ -14,7 +14,7 @@ const validator = (values) => {
 const initialValues = { name: 'John', phone: '11981216988' }
 
 export default () => {
-  const { Form, submit } = useForm({ validator, initialValues })
+  const { Form, submit, reset } = useForm({ validator, initialValues })
   const onSubmit = () => {
     submit((values) => {
         console.log('Success', values)
@@ -23,6 +23,10 @@ export default () => {
         console.log('Error', error)
       })
   }
+  const onReset = () => {
+    reset()
+  }
+
   return <Form>
     <TextFormField
       name={'name'}
@@ -51,5 +55,6 @@ export default () => {
     />
     <br/>
     <button onClick={onSubmit}>Submit</button>
+    <button onClick={onReset}>Reset</button>
   </Form>
 }

@@ -36,7 +36,7 @@ export const useForm = ({
   }, [])
 
   const submit = useCallback(buildSubmit(formName, validator), [formName, validator])
-  const reset = useCallback(buildReset(formName), [formName])
+  const reset = useCallback(buildReset(formName, validator), [formName, validator])
 
   useEffect(cleanForm(formName, cleanOnUnmount), [])
   return { Form: FormComponent, submit, reset }
@@ -87,9 +87,13 @@ const buildSubmit = (formName: string, validator?: (values: any) => {[fieldName:
 const buildReset = (formName: string, validator?: (values: any) => {[fieldName: string]: string | undefined}) => () => {
   const fieldNames = Object.keys(FormFieldRegistry[formName] || {})
   const initialValues = Form[formName].initialValues
+
+  Form[formName].values = {...initialValues}
+
   fieldNames.forEach((fieldName: string) => {
     const changeListeners = Object.values((FormFieldSubscriptions[formName][fieldName] || {} as any).changeListenerSubscribers || {})
     changeListeners.forEach((listener) => listener(initialValues[fieldName]))
+    FormFieldRegistry[formName][fieldName].changeListener(initialValues[fieldName])
   })
   if (typeof validator === 'function') {
     const errors = validator(initialValues)
